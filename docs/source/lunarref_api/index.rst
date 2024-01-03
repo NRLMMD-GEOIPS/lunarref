@@ -10,9 +10,12 @@
  | # # # for more details. If you did not receive the license, for more information see:
  | # # # https://github.com/U-S-NRL-Marine-Meteorology-Division/
 
-**********
-User Guide
-**********
+.. _api:
 
+*************
+API Reference
+*************
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
+
+   lunarref

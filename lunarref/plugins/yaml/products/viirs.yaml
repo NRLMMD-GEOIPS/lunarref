@@ -1,0 +1,35 @@
+interface: products
+family: list
+name: lunarref
+docstring: |
+  VIIRS Lunar Reflectance products
+
+spec:
+  products:
+    - name: Lunar-Ref
+      source_names: [viirs]
+      docstring: |
+        VIIRS Lunar Reflectance single channel product.
+      product_defaults: Lunar-Ref
+      spec:
+        variables: ["DNBRef", "solar_zenith_angle"]
+    - name: Lunar-Ref-IR
+      source_names: [viirs]
+      docstring: |
+        VIIRS Lunar Reflectance RGB product.
+      product_defaults: Lunar-Ref-RGB
+      spec:
+        variables: ["DNBRef", "M16BT"]
+        algorithm:
+          plugin:
+            name: Lunar_Ref_IR
+    - name: Overshooting-Top
+      source_names: [viirs]
+      docstring: |
+        VIIRS Overshooting Tops RGB product.
+      product_defaults: Lunar-Ref-RGB
+      spec:
+        variables: ["DNBRef", "M16BT"]
+        algorithm:
+          plugin:
+            name: Overshooting_Top

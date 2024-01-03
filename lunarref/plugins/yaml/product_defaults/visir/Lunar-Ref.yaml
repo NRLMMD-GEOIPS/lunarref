@@ -1,0 +1,36 @@
+interface: product_defaults
+family: interpolator_algorithm_colormapper
+name: Lunar-Ref
+docstring: |
+  Lunar Reflectance product defaults
+spec:
+  mtif_type: vis
+  algorithm:
+    plugin:
+      name: Lunar_Ref
+      arguments:
+        output_data_range: [0, 100]
+        input_units: reflectance
+        output_units: reflectance
+        min_outbounds: mask
+        max_outbounds: crop
+        scale_factor: 1
+        gamma_list: [1.0]
+        max_night_zen: 90
+        inverse: False
+        norm: False
+  colormapper:
+    plugin:
+      name: matplotlib_linear_norm
+      arguments:
+        data_range: [0, 100]
+        cmap_name: Greys_r
+        cbar_label: Reflectance
+  interpolator:
+    plugin:
+      name: interp_nearest
+      arguments: {}
+  coverage_checker:
+    plugin:
+      name: masked_arrays
+      arguments: {}
