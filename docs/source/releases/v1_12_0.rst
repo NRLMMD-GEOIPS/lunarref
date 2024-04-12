@@ -1,0 +1,120 @@
+ | # # # Distribution Statement A. Approved for public release. Distribution unlimited.
+ | # # #
+ | # # # Author:
+ | # # # Naval Research Laboratory, Marine Meteorology Division
+ | # # #
+ | # # # This program is free software: you can redistribute it and/or modify it under
+ | # # # the terms of the NRLMMD License included with this program. This program is
+ | # # # distributed WITHOUT ANY WARRANTY; without even the implied warranty of
+ | # # # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the included license
+ | # # # for more details. If you did not receive the license, for more information see:
+ | # # # https://github.com/U-S-NRL-Marine-Meteorology-Division/
+
+Version 1.12.0 (2023-12-07)
+***************************
+
+* Installation Updates
+
+  * Replace setup.py with pyproject.toml poetry
+  * Include ancildat git repo in pyproject.toml dependencies
+  * Replace VERSION 0.0.0 lunarref/_version.py
+  * Update to standard .gitignore
+  * Add lunarref/__init__.py
+* Documentation Updates
+
+  * Update to standard documentation outline
+  * Add docs/source/releases
+  * Update to standard README.md and CHANGELOG.rst
+* Formatting Updates
+
+  * Applied black updates
+* Testing Updates
+
+  * Add check_code.sh (no_flake8) and build_docs.sh calls to test_all.sh
+
+Formatting Updates
+==================
+
+Black updates
+-------------
+
+*From GEOIPS#422: 2023-12-08, 1.12.0 release process updates*
+
+::
+
+  modified:   dat/abi/rearrange.py
+  modified:   dat/ahi/rearrange.py
+  modified:   lunarref/lunarref.py
+
+Installation Updates
+====================
+
+Update to standard installation
+-------------------------------
+
+*From GEOIPS#422: 2023-12-08, 1.12.0 release process updates*
+
+* Replace setup.py with pyproject.toml poetry
+* Include ancildat git repo in pyproject.toml dependencies
+* Replace VERSION 0.0.0 lunarref/_version.py
+* Add lunarref/__init__.py
+* Update to standard .gitignore
+
+::
+
+  new: pyproject.toml
+  removed: setup.py
+  modified: .gitignore
+  new: lunarref/_version.py
+  new: lunarref/__init__.py
+  removed: VERSION
+  
+Documentation Updates
+=====================
+
+Update to standard documentation setup
+--------------------------------------
+
+*From GEOIPS#422: 2023-12-08, 1.12.0 release process updates*
+
+* Add docs/source/releases
+* Update to standard documentation outline
+* Update to standard README.md and CHANGELOG.rst
+
+::
+
+  modified: README.md
+  modified/renamed: CHANGELOG.md -> CHANGELOG.rst
+  new: docs/source/releases/index.rst
+  new: docs/source/releases/v1_12_0.rst
+  new: docs/source/introduction/index.rst
+  new: docs/source/userguide/index.rst
+  new: docs/source/lunarref_api/index.rst
+
+Testing Updates
+===============
+
+Add check_code.sh (no_flake8) and build_docs.sh calls to test_all.sh
+--------------------------------------------------------------------
+
+*From GEOIPS#422: 2023-12-08, 1.12.0 release process updates*
+
+::
+
+  tests/test_all.sh
+
+Release Process
+===============
+
+Add release note for v1.12.0
+----------------------------
+
+*From GEOIPS#422: 2023-12-08, 1.12.0 release process updates*
+
+All updates until the next release (v1.12.0) will be included in
+this release note.
+
+::
+
+  new: docs/source/releases/v1_12_0.rst
+  new: docs/source/releases/index.rst

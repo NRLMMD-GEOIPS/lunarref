@@ -10,26 +10,10 @@
     # # # for more details. If you did not receive the license, for more information see:
     # # # https://github.com/U-S-NRL-Marine-Meteorology-Division/
 
-Basic GeoIPS Plugin Template
-=============================
+Lunar Reflectance GeoIPS Plugin
+===============================
 
-This template repository contains everything necessary to create a fully
-compatible GeoIPS Plugin Package.  Each file within this repository contains
-appropriate modification instructions.
-
-To create your own functional plugin for GeoIPS, follow the
-[step by step instructions](./docs/source/userguide/template_instructions.rst) for
-modifying the template files within this repo.
-
-@ Once this repository has been set up properly, you can remove this "Basic
-GeoIPS Plugin Template" section in the README.md, leaving the appropriate
-content for your package's README file.
-
-
-@package@ GeoIPS Plugin
-==========================
-
-The @package@ package is a GeoIPS-compatible plugin, intended to be used within
+The lunarref package is a GeoIPS-compatible plugin, intended to be used within
 the GeoIPS ecosystem.  Please see the
 [GeoIPS Documentation](https://github.com/NRLMMD-GEOIPS/geoips#readme) for
 more information on the GeoIPS plugin architecture and base infrastructure.
@@ -37,26 +21,16 @@ more information on the GeoIPS plugin architecture and base infrastructure.
 Package Overview
 -----------------
 
-The @package@ plugin provides the capability for
-
-@ Please include a brief description of what capability this package provides.
-
-@ This section should be no more than 1-2 paragraphs, if you have additional
-@ information to include, please include in a "docs" subdirectory.
-
-@ Example overview:
-
-@ The template_basic_plugin package provides template files which can be used to create
-@ a fully compatible GeoIPS plugin.  This template repository is focused on basic functionality -
-@ ie, simple readers, products, output formats, etc.  Additional template repositories will be
-@ created for more sophisticated and complicated use cases.
+The Lunar Reflectance package performs lunar corrections based on the lunar
+zenith angle.
 
 System Requirements
 ---------------------
 
-* geoips >= 1.10.0
+* geoips >= 1.12.0
+* fortran_utils
+* ancildat
 * Test data repos contained in $GEOIPS_TESTDATA_DIR for tests to pass.
-* @ Add any additional system requirements, such as gfortran, etc
 
 IF REQUIRED: Install base geoips package
 ------------------------------------------------------------
@@ -66,28 +40,36 @@ If GeoIPS Base is not yet installed, follow the
 [installation instructions](https://github.com/NRLMMD-GEOIPS/geoips#installation)
 within the geoips source repo documentation:
 
-Install @package@ package
-----------------------------
+Install lunarref package
+------------------------
 ```bash
 
-    # Ensure GeoIPS Python environment is enabled.
+    # Assuming you followed the fully supported installation,
+    # using $GEOIPS_PACKAGES_DIR and $GEOIPS_CONFIG_FILE:
+    source $GEOIPS_CONFIG_FILE
+    git clone https://github.com/NRLMMD-GEOIPS/fortran_utils $GEOIPS_PACKAGES_DIR/fortran_utils
+    git clone https://github.com/NRLMMD-GEOIPS/lunarref $GEOIPS_PACKAGES_DIR/lunarref
 
-    # Clone and install @package@
-    git clone https://github.com/NRLMMD-GEOIPS/@package@ $GEOIPS_PACKAGES_DIR/@package@
-    pip install -e $GEOIPS_PACKAGES_DIR/@package@
-
-    # Add any additional clone/install/setup steps here
+    # NOTE: currently, fortran dependencies must be installed separately, initially
+    # including in pyproject.toml resulted in incorrect installation paths.
+    # More work required to get the pip dependencies working properly for fortran
+    # installations via pyproject.toml with the poetry backend.
+    pip install -e $GEOIPS_PACKAGES_DIR/fortran_utils
+    pip install -e $GEOIPS_PACKAGES_DIR/lunarref
 ```
 
-Test @package@ installation
------------------------------
+Test lunarref installation
+--------------------------
 ```bash
 
     # Ensure GeoIPS Python environment is enabled.
 
     # This script will run ALL tests within this package
-    $GEOIPS_PACKAGES_DIR/@package@/tests/test_all.sh
+    $GEOIPS_PACKAGES_DIR/lunarref/tests/test_all.sh
 
     # Individual direct test calls, for reference
-    $GEOIPS_PACKAGES_DIR/@package@/tests/scripts/<test_script_name>.sh
+    $GEOIPS_PACKAGES_DIR/lunarref/tests/scripts/viirs.sh Lunar-Ref-IR
+    $GEOIPS_PACKAGES_DIR/lunarref/tests/scripts/viirs.sh Lunar-Ref
+    $GEOIPS_PACKAGES_DIR/lunarref/tests/scripts/viirs.sh Overshooting-Top
+
 ```
