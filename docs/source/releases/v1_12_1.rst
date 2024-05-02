@@ -1,0 +1,69 @@
+ | # # # Distribution Statement A. Approved for public release. Distribution unlimited.
+ | # # #
+ | # # # Author:
+ | # # # Naval Research Laboratory, Marine Meteorology Division
+ | # # #
+ | # # # This program is free software: you can redistribute it and/or modify it under
+ | # # # the terms of the NRLMMD License included with this program. This program is
+ | # # # distributed WITHOUT ANY WARRANTY; without even the implied warranty of
+ | # # # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the included license
+ | # # # for more details. If you did not receive the license, for more information see:
+ | # # # https://github.com/U-S-NRL-Marine-Meteorology-Division/
+
+Version 1.12.1 (2024-01-16)
+***************************
+
+* Installation updates
+
+  * Call build.py from pyproject.toml
+* Replace Lunar-Ref-RGB product default with geoips repo RGB-Default product
+* Add release note for v1.12.1
+
+Refactor
+========
+
+Replace Lunar-Ref-RGB product default with geoips repo RGB-Default product
+--------------------------------------------------------------------------
+
+*From GEOIPS#468: 2024-02-14, add RGB-Default*
+
+Use a single RGB product defaults for all RGBs.
+
+::
+
+  deleted:    lunarref/plugins/yaml/product_defaults/visir/Lunar-Ref-RGB.yaml
+  modified:   lunarref/plugins/yaml/products/viirs.yaml
+
+
+Installation Updates
+====================
+
+Call build.py from pyproject.toml
+---------------------------------
+
+Ensure build.py returns non-zero if the make fails!  Otherwise pip will think
+it completed successfully!
+
+Also ensure pyproject.toml includes "numpy" as build dependency for fortran-based
+builds!
+
+::
+
+  modified: pyproject.toml
+  new: build.py
+
+Release Process
+===============
+
+Add release note for v1.12.1
+----------------------------
+
+*From GEOIPS#458: 2024-02-09, 1.12.1 release*
+
+All updates until the next release (v1.12.1) will be included in
+this release note.
+
+::
+
+  modified: docs/source/releases/v1.12.1.rst
+  modified: docs/source/releases/index.rst
