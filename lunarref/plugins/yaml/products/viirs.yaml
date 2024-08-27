@@ -17,7 +17,7 @@ spec:
       source_names: [viirs]
       docstring: |
         VIIRS Lunar Reflectance RGB product.
-      product_defaults: Lunar-Ref-RGB
+      product_defaults: RGB-Default
       spec:
         variables: ["DNBRef", "M16BT"]
         algorithm:
@@ -27,7 +27,7 @@ spec:
       source_names: [viirs]
       docstring: |
         VIIRS Overshooting Tops RGB product.
-      product_defaults: Lunar-Ref-RGB
+      product_defaults: RGB-Default
       spec:
         variables: ["DNBRef", "M16BT"]
         algorithm:
