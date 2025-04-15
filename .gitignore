@@ -1,7 +1,4 @@
 ####################################################
-# Fortran specific .gitignore options:
-*.mod
-
 # geoips package specific .gitignore options:
 
 # auto-downloaded test datasets
