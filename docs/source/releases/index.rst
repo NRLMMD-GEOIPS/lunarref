@@ -1,6 +1,10 @@
 .. dropdown:: Distribution Statement
 
+<<<<<<< HEAD
  | # # # This source code is protected under the license referenced at
+=======
+ | # # # This source code is subject to the license referenced at
+>>>>>>> main
  | # # # https://github.com/NRLMMD-GEOIPS.
 
 .. _release_notes:
