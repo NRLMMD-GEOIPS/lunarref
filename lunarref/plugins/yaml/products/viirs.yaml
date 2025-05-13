@@ -9,14 +9,18 @@ spec:
     - name: Lunar-Ref
       source_names: [viirs]
       docstring: |
-        VIIRS Lunar Reflectance single channel product.
+        Lunar Reflectance. Study thicker clouds, study precipitation and
+        provides consistency with daytime products. Used for when the moon is
+        not reflecting sunlight, like a new moon..
       product_defaults: Lunar-Ref
       spec:
         variables: ["DNBRef", "solar_zenith_angle"]
     - name: Lunar-Ref-IR
       source_names: [viirs]
       docstring: |
-        VIIRS Lunar Reflectance RGB product.
+        Infrared Lunar Reflectance. Study thicker clouds, study precipitation
+        and provides consistency with daytime products. Used for when the moon
+        is not reflecting sunlight, like a new moon.
       product_defaults: RGB-Default
       spec:
         variables: ["DNBRef", "M16BT"]
@@ -26,7 +30,9 @@ spec:
     - name: Overshooting-Top
       source_names: [viirs]
       docstring: |
-        VIIRS Overshooting Tops RGB product.
+        When thunderstorms have a “big nasty cloud with rain” (Sampson,
+        Meteorologist) that pushes  through an inversion at the top of the
+        tropopause.
       product_defaults: RGB-Default
       spec:
         variables: ["DNBRef", "M16BT"]
