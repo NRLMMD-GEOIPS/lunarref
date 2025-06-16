@@ -508,6 +508,11 @@
     // --- File/Folder Exclusions ---
     // Glob patterns for files and folders to ignore globally
     "ignorePaths": [
+        // GeoIPS Stored environment files (pip and mamba)
+        "**/environments/pip_*.txt",
+        "**/environments/mamba_*.yml",
+        "**/environments/conda_*.yml",
+        "**/environments/requirements.txt",
         // Common VCS/Dev environment folders
         "**/.env/**",
         "**/.git/**",
