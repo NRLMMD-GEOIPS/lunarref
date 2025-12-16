@@ -1,8 +1,4 @@
 ####################################################
-# Fortran specific .gitignore options:
-*.mod
-
-####################################################
 # geoips package specific .gitignore options:
 
 # auto-downloaded test datasets
@@ -38,6 +34,11 @@ _version.py
 # directory for profiling outputs
 profiling/
 *.pstats
+
+####################################################
+# Fortran specific .gitignore options:
+
+*.mod
 
 ####################################################
 # Default auto-generated .gitignore options:

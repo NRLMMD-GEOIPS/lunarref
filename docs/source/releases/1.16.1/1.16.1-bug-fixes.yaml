@@ -1,0 +1,19 @@
+bug fix:
+- title: 'Use bdeck file from geoips repo for viirs test script'
+  description: |
+    Follow standard of using bdeck file included in geoips repo for TC test scripts,
+    for consistency.
+  files:
+    deleted:
+    - ''
+    moved:
+    - ''
+    added:
+    - ''
+    modified:
+    - 'tests/scripts/viirs.sh'
+  related-issue:
+    internal: GEOIPS#861
+  date:
+    start: 2025-06-08
+    finish: 2025-06-08

@@ -1,0 +1,18 @@
+bug fix:
+- title: 'Remove release note index.rst to resolve doc build error'
+  description: 'index.rst no longer needed - auto generated during build'
+  files:
+    deleted:
+    - 'docs/source/releases/index.rst'
+    moved:
+    - ''
+    added:
+    - ''
+    modified:
+    - ''
+  related-issue:
+    number: 753
+    repo_url: "GEOIPS/geoips"
+  date:
+    start: 2025-04-14
+    finish: 2025-04-14
