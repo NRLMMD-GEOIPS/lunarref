@@ -4,28 +4,6 @@
     // --- Custom Words ---
     // Words considered correct for THIS project specifically
     "words": [
-        // NRL ONLY remove this section for github.com
-        "Zosr",
-        "cowvr",
-        "cshell",
-        "cylc",
-        "datefmt",
-        "ewsg",
-        "gdeck",
-        "gdecks",
-        "independentoutdirs",
-        "integ",
-        "nexsat",
-        "PKGS",
-        "pyflow",
-        "pypackages",
-        "pytype",
-        "rcfile",
-        "satnrl",
-        "tcwww",
-        "uiserver",
-        "vimrc",
-        "wsfm",
         // Project Specific / Acronyms / People / Orgs
         "libopenblas",
         "ryglickicane",
