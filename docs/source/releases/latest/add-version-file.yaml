@@ -1,0 +1,23 @@
+bug fix:
+- title: 'Commit the lunarref/_version.py placeholder'
+  description: |
+    ``lunarref/__init__.py`` imports ``__version__`` from ``_version.py``, but
+    that file was never committed (it is listed in ``.gitignore``).
+    ``poetry-dynamic-versioning`` only rewrites an existing ``_version.py`` and
+    ``pip install -e`` does not create one, so after an editable install
+    ``import lunarref`` failed with ``No module named 'lunarref._version'``.
+    Because GeoIPS imports every plugin package at startup, this broke every
+    ``geoips`` command, including ``geoips config create-registries``.
+
+    Add the ``0.0.0`` placeholder ``_version.py`` (force-added past
+    ``.gitignore``), matching the other GeoIPS plugin repos such as ``geocolor``.
+  files:
+    added:
+    - 'lunarref/_version.py'
+    - 'docs/source/releases/latest/add-version-file.yaml'
+  related-issue:
+    number: null
+    repo_url: ''
+  date:
+    start: '10/05/2026'
+    finish: '10/05/2026'
