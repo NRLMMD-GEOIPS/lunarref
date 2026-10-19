@@ -21,3 +21,18 @@ bug fix:
   date:
     start: '10/05/2026'
     finish: '10/05/2026'
+- title: 'Add the tests/conftest.py the other plugin repos have'
+  description: |
+    The GeoIPS CI runs plugin integration tests with
+    ``--no-fail-on-missing-data``, an option the plugin's ``tests/conftest.py``
+    adds. lunarref had none, so pytest stopped with "unrecognized arguments:
+    --no-fail-on-missing-data". The conftest is the same as true_color's.
+  files:
+    added:
+    - 'tests/conftest.py'
+  related-issue:
+    number: null
+    repo_url: ''
+  date:
+    start: 2026-10-19
+    finish: 2026-10-19
