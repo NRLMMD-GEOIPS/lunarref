@@ -36,3 +36,18 @@ bug fix:
   date:
     start: 2026-10-19
     finish: 2026-10-19
+- title: 'Remove a duplicate documentation key from a 1.14.4 release note'
+  description: |
+    ``294-add-descriptions-to-tc-products-and-readers.yaml`` had a second, empty
+    ``documentation`` section left over from the release note template. brassy
+    rejects duplicate keys, so the docs build (``build_docs.sh``, run by the
+    integration tests) failed.
+  files:
+    modified:
+    - 'docs/source/releases/1.14.4/294-add-descriptions-to-tc-products-and-readers.yaml'
+  related-issue:
+    number: null
+    repo_url: ''
+  date:
+    start: 2026-10-20
+    finish: 2026-10-20
